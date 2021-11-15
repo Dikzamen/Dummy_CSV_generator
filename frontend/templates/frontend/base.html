@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="{% static '/frontend/base.css' %}">
+{% block css %} {% endblock %}
+</head>
+<body>
+    <nav class="header">
+        <div class="left-links">
+            <a class="links not_link">FakeCSV</a>
+            <a class="links" href="{% url 'app:schemas' %}">Schemas</a>
+        </div>
+        <div>
+            <a class="links not_link">
+                Hello, <b>{{ user }}</b>
+            </a>
+            <a class="links" href="{% url 'app:login' %}">Logout</a>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
